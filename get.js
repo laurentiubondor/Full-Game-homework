@@ -18,7 +18,7 @@ async function displayGamesInHtml() {
 
         });
 
-        postsDOM.forEach(postDOM => {
+        postsDOM.forEach((postDOM, index) => {
 
             container.appendChild(postDOM)
 
@@ -28,7 +28,7 @@ async function displayGamesInHtml() {
             btn.addEventListener("click", function() {
 
 
-                const id = Games.id //         AICI NU MAI STIU CUM SA FAC !
+                const id = posts[index]._id //         AICI NU MAI STIU CUM SA FAC !
 
                 ServerApi.deleteGame(id).then(function(response) {
 
